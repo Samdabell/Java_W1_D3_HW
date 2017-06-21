@@ -8,11 +8,13 @@ import static org.junit.Assert.*;
 
 public class SkyScraperTest {
     Skyscraper skyscraper;
+    Godzilla godzilla;
 
 
     @Before
     public void before(){
         skyscraper = new Skyscraper("building", 30);
+        godzilla = new Godzilla("Gary", 100, 50);
     }
 
 
@@ -29,5 +31,11 @@ public class SkyScraperTest {
     @Test
     public void canBeDestroyed(){
         assertEquals("Kabooooooooom", skyscraper.destroy());
+    }
+
+    @Test
+    public void canBeAttacked(){
+        skyscraper.attack(godzilla);
+        assertEquals(-20, skyscraper.getHealthValue());
     }
 }

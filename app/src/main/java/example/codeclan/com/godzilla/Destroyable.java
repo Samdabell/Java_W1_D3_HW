@@ -1,6 +1,6 @@
 package example.codeclan.com.godzilla;
 
 public interface Destroyable {
-    void die();
+    String destroy();
     void attack(Kaiju kaiju);
 }
